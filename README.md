@@ -6,9 +6,25 @@ ICCV 2019.
 [[PDF]](http://openaccess.thecvf.com/content_ICCV_2019/papers/Li_Universal_Perturbation_Attack_Against_Image_Retrieval_ICCV_2019_paper.pdf)
 
 ## Code
-The code base will be released as soon as possible after cleaning up.
-
 Our codes are based on [filipradenovic/cnnimageretrieval-pytorch](https://github.com/filipradenovic/cnnimageretrieval-pytorch).
+Please clone their repository first, and then put the `attack` folder here in `cirtorh/examples/`
+
+### Prepare Features
+1. Follow the steps in [filipradenovic/cnnimageretrieval-pytorch](https://github.com/filipradenovic/cnnimageretrieval-pytorch) to download datasets and train the retrieval models.
+2. Refer to the function `cluster()` in `attack/myutil/triplet_dataset.py` about extracting features and clustering.
+
+### Train Classifiers (Optional)
+```
+python -m cirtorch.examples.attack.classifier.py PATH
+```
+
+### Generate UAP
+Refer to arguments in `attack/attack.py` for details.
+
+### Ranking Distillation
+1. Refer to `attack/extract_rank.py` for extracting ranking list.
+2. Refer to `attack/distillation.py` for distillation.
+
 
 ## Typos in Paper
 1. Eq. 6 should be ![](http://latex.codecogs.com/gif.latex?\\frac{\\partial%20d(f,f_j)}{\\partial\\delta}-\\frac{\\partial%20d(f,f_k)}{\\partial\\delta})
@@ -27,3 +43,5 @@ month = {October},
 year = {2019}
 }
 ```
+
+Feel free to contact to the authors (lijie.32@outlook.com) or create a new issue if you find any problems.
