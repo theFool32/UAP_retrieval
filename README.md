@@ -6,7 +6,7 @@ ICCV 2019.
 [[PDF]](http://openaccess.thecvf.com/content_ICCV_2019/papers/Li_Universal_Perturbation_Attack_Against_Image_Retrieval_ICCV_2019_paper.pdf)
 
 ## Code
-Our codes are based on [filipradenovic/cnnimageretrieval-pytorch](https://github.com/filipradenovic/cnnimageretrieval-pytorch).
+Our codes are based on [filipradenovic/cnnimageretrieval-pytorch](https://github.com/filipradenovic/cnnimageretrieval-pytorch) (Commit `c4fca89`).
 Please clone their repository first, and then put the `attack` folder here in `cirtorh/examples/`
 
 ### Prepare Features
