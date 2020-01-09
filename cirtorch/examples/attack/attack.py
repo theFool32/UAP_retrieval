@@ -17,22 +17,18 @@ import torch.utils.data
 import torchvision
 import torchvision.models as models
 import torchvision.transforms as transforms
+
 from cirtorch.datasets.datahelpers import cid2filename, collate_tuples
 from cirtorch.datasets.testdataset import configdataset
 from cirtorch.datasets.traindataset import TuplesDataset
 from cirtorch.examples.attack.myutil.baseline import result as baseline_result
-from cirtorch.examples.attack.myutil.mi_sgd import MI_SGD, SIGN_Adam, SIGN_AdaBound
+from cirtorch.examples.attack.myutil.mi_sgd import (MI_SGD, SIGN_AdaBound,
+                                                    SIGN_Adam)
 from cirtorch.examples.attack.myutil.sfm_dataset import SfMDataset
 from cirtorch.examples.attack.myutil.triplet_dataset import MyTripletDataset
-from cirtorch.examples.attack.myutil.utils import (
-    MultiLoss,
-    do_whiten,
-    inv_gfr,
-    one_hot,
-    rescale_check,
-    bcolors,
-    idcg,
-)
+from cirtorch.examples.attack.myutil.utils import (MultiLoss, bcolors,
+                                                   do_whiten, idcg, inv_gfr,
+                                                   one_hot, rescale_check)
 from cirtorch.layers.loss import ContrastiveLoss
 from cirtorch.networks.imageretrievalnet import extract_vectors, init_network
 from cirtorch.utils.download import download_test, download_train
@@ -158,11 +154,11 @@ parser.add_argument(
 
 parser.add_argument("--max-eps", default=10, type=int, help="max eps")
 
+args = parser.parse_args()
+pprint(args)
+
 
 def main():
-    global args
-    args = parser.parse_args()
-    pprint(args)
     global base
     global MAX_EPS
     MAX_EPS = args.max_eps / 255.0
@@ -273,7 +269,7 @@ def main():
             normalize,
             classification_model,
             optimizer,
-            multiLoss,
+            None,
         )
         print("epoch time", time.time() - begin_time)
 
@@ -434,7 +430,6 @@ def train(train_loader, model, noise, epoch, normalize, cls, optimizer, multiLos
             # neg_i = clean_ranks[256:, :].squeeze()
             pos_i = clean_ranks[:, :].squeeze()
             neg_i = torch.flip(pos_i, (0,))
-
 
             scores = -torch.mm((pool_clusters_centers), perturbed_feature)
             _, ranks = torch.sort(scores, dim=0, descending=True)
