@@ -1,6 +1,6 @@
 This is the project page of our paper:
 
-**Universal Perturbation Attack Against Image Retrieval**,  
+**Universal Perturbation Attack Against Image Retrieval**,
 Li, J., Ji, R., Liu, H., Hong, X., Gao, Y., & Tian, Q.
 ICCV 2019.
 [[PDF]](http://openaccess.thecvf.com/content_ICCV_2019/papers/Li_Universal_Perturbation_Attack_Against_Image_Retrieval_ICCV_2019_paper.pdf)
@@ -14,7 +14,7 @@ The attack codes locate in `cirtorch/examples/attack`.
 
 ### Prepare Features
 
-1. Follow the steps in [filipradenovic/cnnimageretrieval-pytorch](https://github.com/filipradenovic/cnnimageretrieval-pytorch) to download datasets and train the retrieval models.
+1. Follow the steps in [filipradenovic/cnnimageretrieval-pytorch](https://github.com/filipradenovic/cnnimageretrieval-pytorch) to download datasets and train the retrieval models. (Our pretrained models are available at [Google Drive](https://drive.google.com/file/d/1iItJHZb2NHh-EyF-A0358a3VmlKg0OMo/view).)
 2. Refer to the function `cluster()` in `cirtorch/examples/attack/myutil/triplet_dataset.py` about extracting features and clustering.
 
 ### Train Classifiers (Optional)
