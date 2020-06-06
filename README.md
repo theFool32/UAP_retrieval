@@ -1,7 +1,7 @@
 This is the project page of our paper:
 
-**Universal Perturbation Attack Against Image Retrieval**,
-Li, J., Ji, R., Liu, H., Hong, X., Gao, Y., & Tian, Q.
+**Universal Perturbation Attack Against Image Retrieval**,  
+Li, J., Ji, R., Liu, H., Hong, X., Gao, Y., & Tian, Q.  
 ICCV 2019.
 [[PDF]](http://openaccess.thecvf.com/content_ICCV_2019/papers/Li_Universal_Perturbation_Attack_Against_Image_Retrieval_ICCV_2019_paper.pdf)
 
