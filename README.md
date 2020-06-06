@@ -34,8 +34,8 @@ Refer to arguments in `cirtorch/examples/attack/attack.py` for details.
 
 ## Typos in Paper
 
-1. Eq. 6 should be ![](<http://latex.codecogs.com/gif.latex?\frac{\partial%20d(f,f_j)}{\partial\delta}-\frac{\partial%20d(f,f_k)}{\partial\delta}>)
-2. Eq. 7 should be ![](http://latex.codecogs.com/gif.latex?m<n})
+1. Eq. 6 should be ![](http://latex.codecogs.com/gif.latex?\frac{\partial%20d(f,f_j)}{\partial\delta}-\frac{\partial%20d(f,f_k)}{\partial\delta})
+2. Eq. 7 should be ![](http://latex.codecogs.com/gif.latex?m<n)
 
 I'm sorry for typos in this paper. If you find more typos, please do not hesitate to point out in [issues](https://github.com/theFool32/UAP_retrieval/issues).
 
