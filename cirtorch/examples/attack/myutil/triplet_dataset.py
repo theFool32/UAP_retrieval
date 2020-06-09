@@ -135,9 +135,10 @@ class MyTripletDataset(data.Dataset):
         self.pool_clusters_centers = torch.from_numpy(self.kmeans_.cluster_centers_)
         print("")
 
-        # for idx in self.qidxs:
-        #     self.loaded_imgs.append(self.loader(self.images[idx]))
-        # pickle.dump(self.loaded_imgs, open("data/train_imgs.pkl", "wb"))
+        if not os.path.isfile("data/train_imgs.pkl"):
+            for idx in self.qidxs:
+                self.loaded_imgs.append(self.loader(self.images[idx]))
+            pickle.dump(self.loaded_imgs, open("data/train_imgs.pkl", "wb"))
         self.loaded_imgs = pickle.load(open("data/train_imgs.pkl", "rb"))
 
     def cluster(self, net):

@@ -91,6 +91,11 @@ def main():
     # set cuda visible device
     os.environ["CUDA_VISIBLE_DEVICES"] = args.gpu_id
 
+    # check if test dataset are downloaded
+    # and download if they are not
+    download_train(get_data_root())
+    download_test(get_data_root())
+
     # set random seeds (maybe pass as argument)
     torch.manual_seed(1234)
     torch.cuda.manual_seed_all(1234)

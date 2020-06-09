@@ -80,7 +80,8 @@ class Distillation_dataset(data.Dataset):
         self.phase = 1
 
         self.ranks = torch.load(f"{filename}/ranks_362")
-        self.pool_vecs = pickle.load(open(f"{filename}/pool_vecs", "rb"))
+        if os.path.isfile(f"{filename}/pool_vecs"):
+            self.pool_vecs = pickle.load(open(f"{filename}/pool_vecs", "rb"))
         print(len(self.images))
         self.loaded_images = []
         if os.path.exists("./images"):
